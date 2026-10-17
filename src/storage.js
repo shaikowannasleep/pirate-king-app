@@ -1,7 +1,7 @@
 // Progress persisted in localStorage. Every access is guarded: private windows, blocked storage
 // and quota errors fall back to an in-memory save so the game still works.
 const KEY = 'pirate-king-save-v1';
-const DEFAULTS = () => ({ v: 1, gold: 0, unlocked: 1, stars: {}, best: {}, upgrades: { hull: 0, cannons: 0, sails: 0 }, settings: { quality: 'high', sound: true }, seenIntro: false });
+const DEFAULTS = () => ({ v: 1, gold: 0, unlocked: 1, stars: {}, best: {}, upgrades: { hull: 0, cannons: 0, sails: 0 }, settings: { quality: 'high', sound: true, name: '' }, seenIntro: false });
 
 let memory = null;
 function read() {

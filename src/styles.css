@@ -143,3 +143,9 @@ button{font:inherit;color:inherit}
 .chart.portrait .compass{right:auto;left:5%;bottom:3%;width:18%}
 .chart.portrait .cartouche{left:auto;right:6%;top:4%}
 .live-toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 70px);transform:translateX(-50%);z-index:9999;padding:10px 18px;border-radius:999px;border:1px solid #c9a24a;background:rgba(20,16,10,.92);color:#f3d68a;font:600 13px/1.2 system-ui,sans-serif;letter-spacing:.04em;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.5)}
+
+/* title mode select */
+.mode-select{display:flex;flex-direction:column;align-items:center;gap:12px;width:min(92vw,360px)}
+.mode-select .btn{width:100%;min-height:56px}
+.mode-select .crew-btn{flex-direction:column;gap:4px;padding:12px 24px}
+.mode-select .mode-sub{font-size:10px;letter-spacing:.3em;color:var(--muted);font-weight:600}

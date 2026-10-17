@@ -58,13 +58,38 @@ function showTitle() {
       <h1 class="logo"><span>Pirate</span><span>King</span></h1>
       <div class="rule"><i></i><b></b><i></i></div>
       <p class="tagline">Rule the seven seas. Sink the fleet. Claim the crown.</p>
-      <button class="btn primary big" data-act="play">Play</button>
+      <div class="mode-select">
+        <button class="btn primary big" data-act="play" aria-label="Play campaign">Campaign</button>
+        <button class="btn big crew-btn" data-act="crew" aria-label="Crew Seas, online crews">Crew Seas <span class="mode-sub">online crews</span></button>
+      </div>
       <div class="title-meta">${totalStars()} / ${LEVELS.length * 3} stars &nbsp;&middot;&nbsp; ${COIN} ${fmt(save.gold)}</div>
     </div>
     <div class="title-foot"><span class="hint-kb">Keyboard: A/D steer &middot; W/S sails &middot; Q/E fire &middot; Space auto-fire</span><span class="hint-touch">Drag the wheel to steer &middot; tap to fire broadsides</span></div>
   </section>`);
-  el.addEventListener('click', (e) => { const a = e.target.closest('[data-act]')?.dataset.act; if (a === 'play') { blip(523); showMap(); } else if (a === 'settings') openSettings(); });
+  el.addEventListener('click', (e) => { const a = e.target.closest('[data-act]')?.dataset.act; if (a === 'play') { blip(523); showMap(); } else if (a === 'crew') { blip(523); showCrew(); } else if (a === 'settings') openSettings(); });
   setScreen('title', el);
+}
+
+// ---------------- Crew Seas (Mode 2 multiplayer) ----------------
+let crewUI = null;
+function stopCrew() { if (crewUI) { try { crewUI.dispose(); } catch (e) { console.warn(e); } crewUI = null; } }
+function showCrew(joinCode) {
+  if (typeof PK.lobby !== 'function') {
+    // This runtime build predates Mode 2: keep the campaign untouched and say so.
+    openModal(`<div class="modal-card" data-testid="crew-soon"><div class="kicker">Crew Seas</div><h3>Coming soon</h3><p class="brief-text">Multiplayer crews are not in this build yet. The campaign is ready to play.</p><div class="row"><button class="btn primary" data-act="close">Back</button></div></div>`, (a) => { if (a === 'close') closeModal(); });
+    return;
+  }
+  stopRuntime(); stopCrew(); closeModal();
+  screen = 'crew'; ui.replaceChildren(); ui.dataset.screen = 'crew'; document.body.dataset.screen = 'crew';
+  const extra = {}; // the runtime wires its own net/sim/bootCrew; pass them only if exposed separately
+  for (const k of ['bootCrew', 'net', 'sim']) if (PK[k]) extra[k] = PK[k];
+  window.__app = { screen, save, runtime: null, levels: LEVELS };
+  startLiveUpdate(() => screen);
+  crewUI = PK.lobby(stage, {
+    ...extra, quality: save.settings.quality, playerName: save.settings.name || '', joinCode: joinCode || undefined,
+    onEvent: (e) => { if (e?.type === 'name') { save.settings.name = String(e.name || '').slice(0, 16); persist(); } },
+    onExit: () => { stopCrew(); showTitle(); },
+  });
 }
 
 // ---------------- Sea chart (level select) ----------------
@@ -237,5 +262,10 @@ let lastPortrait = null;
 window.addEventListener('resize', () => { const p = window.innerHeight > window.innerWidth * 1.1; if (screen === 'map' && p !== lastPortrait) showMap(); lastPortrait = p; });
 window.__app = { screen, save, runtime, levels: LEVELS };
 startLiveUpdate(() => screen);
-window.__appApi = { showTitle, showMap, showShop, startLevel, openSettings, get runtime() { return runtime; }, get save() { return save; } };
+window.__appApi = { showCrew, showTitle, showMap, showShop, startLevel, openSettings, get runtime() { return runtime; }, get save() { return save; } };
 showTitle();
+// A share link (?join=123456) goes straight to the join flow with the code filled in.
+{
+  const code = new URLSearchParams(location.search).get('join');
+  if (code && /^\d{6}$/.test(code.trim())) showCrew(code.trim());
+}
