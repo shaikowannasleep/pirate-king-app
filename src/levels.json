@@ -1,0 +1,1101 @@
+{
+  "schema": "pirate-king-levels-1",
+  "levels": [
+    {
+      "id": "l1-cove",
+      "name": "Starter Cove",
+      "order": 1,
+      "description": "Learn to sail. Collect 5 gold crates and sink the patrolling sloop.",
+      "env": {
+        "time": "dawn",
+        "waveHeight": 0.8,
+        "fog": 0.0018
+      },
+      "wind": {
+        "dir": 0.6,
+        "speed": 8
+      },
+      "bounds": 380,
+      "player": {
+        "x": 0,
+        "z": -170,
+        "heading": 0,
+        "kind": "brig"
+      },
+      "islands": [
+        {
+          "id": "i1",
+          "x": -125,
+          "z": 40,
+          "r": 55,
+          "h": 26,
+          "seed": 11,
+          "palms": 18
+        },
+        {
+          "id": "i2",
+          "x": 125,
+          "z": 95,
+          "r": 38,
+          "h": 18,
+          "seed": 12,
+          "palms": 12
+        },
+        {
+          "id": "i3",
+          "x": 30,
+          "z": 205,
+          "r": 22,
+          "h": 10,
+          "seed": 13,
+          "palms": 6
+        },
+        {
+          "id": "i4",
+          "x": -45,
+          "z": -70,
+          "r": 13,
+          "h": 6,
+          "seed": 14,
+          "palms": 3
+        },
+        {
+          "id": "i5",
+          "x": 160,
+          "z": -120,
+          "r": 26,
+          "h": 12,
+          "seed": 15,
+          "palms": 8
+        },
+        {
+          "id": "i6",
+          "x": -190,
+          "z": -170,
+          "r": 20,
+          "h": 9,
+          "seed": 16,
+          "palms": 5
+        }
+      ],
+      "enemies": [
+        {
+          "id": "s1",
+          "kind": "sloop",
+          "x": -20,
+          "z": 150,
+          "heading": 1.6,
+          "ai": "patrol",
+          "path": [
+            [
+              -20,
+              150
+            ],
+            [
+              80,
+              160
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              -40,
+              100
+            ]
+          ]
+        }
+      ],
+      "forts": [],
+      "pickups": [
+        {
+          "id": "g1",
+          "type": "gold",
+          "x": 0,
+          "z": -105,
+          "value": 30
+        },
+        {
+          "id": "g2",
+          "type": "gold",
+          "x": 55,
+          "z": -60,
+          "value": 30
+        },
+        {
+          "id": "g3",
+          "type": "gold",
+          "x": 85,
+          "z": 5,
+          "value": 30
+        },
+        {
+          "id": "g4",
+          "type": "gold",
+          "x": 20,
+          "z": 60,
+          "value": 30
+        },
+        {
+          "id": "g5",
+          "type": "gold",
+          "x": -40,
+          "z": 15,
+          "value": 30
+        },
+        {
+          "id": "r1",
+          "type": "repair",
+          "x": -60,
+          "z": 140,
+          "value": 60
+        },
+        {
+          "id": "w1",
+          "type": "powder",
+          "x": 40,
+          "z": -20,
+          "value": 12
+        }
+      ],
+      "goal": {
+        "type": "collectAndSink",
+        "time": 0,
+        "gold": 150
+      }
+    },
+    {
+      "id": "l2-convoy",
+      "name": "Merchant Convoy",
+      "order": 2,
+      "description": "A rich convoy sails the archipelago. Sink 3 merchants and their escort brig before they escape.",
+      "env": {
+        "time": "noon",
+        "waveHeight": 1,
+        "fog": 0.0012
+      },
+      "wind": {
+        "dir": 1.6,
+        "speed": 10
+      },
+      "bounds": 480,
+      "player": {
+        "x": -250,
+        "z": -190,
+        "heading": 0.8,
+        "kind": "brig"
+      },
+      "islands": [
+        {
+          "id": "i1",
+          "x": 0,
+          "z": 0,
+          "r": 60,
+          "h": 22,
+          "seed": 21,
+          "palms": 20
+        },
+        {
+          "id": "i2",
+          "x": -180,
+          "z": 40,
+          "r": 30,
+          "h": 14,
+          "seed": 22,
+          "palms": 9
+        },
+        {
+          "id": "i3",
+          "x": 170,
+          "z": 40,
+          "r": 35,
+          "h": 16,
+          "seed": 23,
+          "palms": 10
+        },
+        {
+          "id": "i4",
+          "x": 90,
+          "z": -150,
+          "r": 25,
+          "h": 12,
+          "seed": 24,
+          "palms": 7
+        },
+        {
+          "id": "i5",
+          "x": -90,
+          "z": -130,
+          "r": 20,
+          "h": 9,
+          "seed": 25,
+          "palms": 5
+        },
+        {
+          "id": "i6",
+          "x": 260,
+          "z": 230,
+          "r": 25,
+          "h": 11,
+          "seed": 26,
+          "palms": 6
+        },
+        {
+          "id": "i7",
+          "x": -320,
+          "z": 220,
+          "r": 30,
+          "h": 15,
+          "seed": 27,
+          "palms": 8
+        }
+      ],
+      "enemies": [
+        {
+          "id": "m1",
+          "kind": "merchant",
+          "x": -40,
+          "z": 200,
+          "heading": 1.8,
+          "ai": "flee",
+          "path": [
+            [
+              0,
+              205
+            ],
+            [
+              200,
+              150
+            ],
+            [
+              300,
+              -50
+            ],
+            [
+              150,
+              -250
+            ],
+            [
+              -100,
+              -255
+            ],
+            [
+              -300,
+              -50
+            ],
+            [
+              -200,
+              150
+            ]
+          ]
+        },
+        {
+          "id": "m2",
+          "kind": "merchant",
+          "x": -110,
+          "z": 180,
+          "heading": 1.8,
+          "ai": "flee",
+          "path": [
+            [
+              0,
+              205
+            ],
+            [
+              200,
+              150
+            ],
+            [
+              300,
+              -50
+            ],
+            [
+              150,
+              -250
+            ],
+            [
+              -100,
+              -255
+            ],
+            [
+              -300,
+              -50
+            ],
+            [
+              -200,
+              150
+            ]
+          ]
+        },
+        {
+          "id": "m3",
+          "kind": "merchant",
+          "x": -180,
+          "z": 160,
+          "heading": 1.8,
+          "ai": "flee",
+          "path": [
+            [
+              0,
+              205
+            ],
+            [
+              200,
+              150
+            ],
+            [
+              300,
+              -50
+            ],
+            [
+              150,
+              -250
+            ],
+            [
+              -100,
+              -255
+            ],
+            [
+              -300,
+              -50
+            ],
+            [
+              -200,
+              150
+            ]
+          ]
+        },
+        {
+          "id": "b1",
+          "kind": "brig",
+          "x": -75,
+          "z": 150,
+          "heading": 1.8,
+          "ai": "patrol",
+          "path": [
+            [
+              0,
+              205
+            ],
+            [
+              200,
+              150
+            ],
+            [
+              300,
+              -50
+            ],
+            [
+              150,
+              -250
+            ],
+            [
+              -100,
+              -255
+            ],
+            [
+              -300,
+              -50
+            ],
+            [
+              -200,
+              150
+            ]
+          ]
+        }
+      ],
+      "forts": [],
+      "pickups": [
+        {
+          "id": "g1",
+          "type": "gold",
+          "x": -200,
+          "z": -100,
+          "value": 40
+        },
+        {
+          "id": "g2",
+          "type": "gold",
+          "x": -100,
+          "z": 60,
+          "value": 40
+        },
+        {
+          "id": "g3",
+          "type": "gold",
+          "x": 100,
+          "z": 90,
+          "value": 40
+        },
+        {
+          "id": "r1",
+          "type": "repair",
+          "x": -130,
+          "z": -50,
+          "value": 60
+        },
+        {
+          "id": "w1",
+          "type": "powder",
+          "x": -160,
+          "z": -170,
+          "value": 15
+        },
+        {
+          "id": "r2",
+          "type": "repair",
+          "x": 220,
+          "z": -160,
+          "value": 60
+        }
+      ],
+      "goal": {
+        "type": "sinkAll",
+        "time": 240,
+        "gold": 0
+      }
+    },
+    {
+      "id": "l3-fortress",
+      "name": "Skull Fortress",
+      "order": 3,
+      "description": "Two forts guard the bay. Outrange their guns, dodge the patrol and reduce both to rubble.",
+      "env": {
+        "time": "sunset",
+        "waveHeight": 1.1,
+        "fog": 0.002
+      },
+      "wind": {
+        "dir": -0.8,
+        "speed": 9
+      },
+      "bounds": 460,
+      "player": {
+        "x": 0,
+        "z": -260,
+        "heading": 0,
+        "kind": "brig"
+      },
+      "islands": [
+        {
+          "id": "fa",
+          "x": -130,
+          "z": 120,
+          "r": 45,
+          "h": 22,
+          "seed": 31,
+          "palms": 10
+        },
+        {
+          "id": "fb",
+          "x": 145,
+          "z": 165,
+          "r": 40,
+          "h": 20,
+          "seed": 32,
+          "palms": 9
+        },
+        {
+          "id": "i3",
+          "x": 0,
+          "z": 30,
+          "r": 30,
+          "h": 14,
+          "seed": 33,
+          "palms": 9
+        },
+        {
+          "id": "i4",
+          "x": -260,
+          "z": -40,
+          "r": 28,
+          "h": 12,
+          "seed": 34,
+          "palms": 8
+        },
+        {
+          "id": "i5",
+          "x": 250,
+          "z": -60,
+          "r": 32,
+          "h": 15,
+          "seed": 35,
+          "palms": 9
+        },
+        {
+          "id": "i6",
+          "x": 20,
+          "z": 270,
+          "r": 22,
+          "h": 10,
+          "seed": 36,
+          "palms": 6
+        },
+        {
+          "id": "i7",
+          "x": -50,
+          "z": -130,
+          "r": 12,
+          "h": 6,
+          "seed": 37,
+          "palms": 2
+        },
+        {
+          "id": "i8",
+          "x": 110,
+          "z": -170,
+          "r": 16,
+          "h": 7,
+          "seed": 38,
+          "palms": 4
+        }
+      ],
+      "enemies": [
+        {
+          "id": "s1",
+          "kind": "sloop",
+          "x": -60,
+          "z": 60,
+          "heading": 0,
+          "ai": "patrol",
+          "path": [
+            [
+              -60,
+              60
+            ],
+            [
+              -200,
+              40
+            ],
+            [
+              -180,
+              200
+            ],
+            [
+              -40,
+              210
+            ]
+          ]
+        },
+        {
+          "id": "s2",
+          "kind": "sloop",
+          "x": 80,
+          "z": 90,
+          "heading": 0,
+          "ai": "patrol",
+          "path": [
+            [
+              80,
+              90
+            ],
+            [
+              230,
+              100
+            ],
+            [
+              220,
+              240
+            ],
+            [
+              60,
+              230
+            ]
+          ]
+        },
+        {
+          "id": "b1",
+          "kind": "brig",
+          "x": 0,
+          "z": 120,
+          "heading": 3.1,
+          "ai": "patrol",
+          "path": [
+            [
+              0,
+              120
+            ],
+            [
+              100,
+              -40
+            ],
+            [
+              -100,
+              -40
+            ]
+          ]
+        }
+      ],
+      "forts": [
+        {
+          "id": "f1",
+          "x": -130,
+          "z": 120,
+          "hp": 300,
+          "range": 150
+        },
+        {
+          "id": "f2",
+          "x": 145,
+          "z": 165,
+          "hp": 300,
+          "range": 150
+        }
+      ],
+      "pickups": [
+        {
+          "id": "g1",
+          "type": "gold",
+          "x": -120,
+          "z": -120,
+          "value": 40
+        },
+        {
+          "id": "g2",
+          "type": "gold",
+          "x": 160,
+          "z": -90,
+          "value": 40
+        },
+        {
+          "id": "r1",
+          "type": "repair",
+          "x": -190,
+          "z": -70,
+          "value": 70
+        },
+        {
+          "id": "r2",
+          "type": "repair",
+          "x": 200,
+          "z": 20,
+          "value": 70
+        },
+        {
+          "id": "w1",
+          "type": "powder",
+          "x": 0,
+          "z": -80,
+          "value": 15
+        },
+        {
+          "id": "g3",
+          "type": "gold",
+          "x": 0,
+          "z": 200,
+          "value": 60
+        }
+      ],
+      "goal": {
+        "type": "destroyForts",
+        "time": 0,
+        "gold": 0
+      }
+    },
+    {
+      "id": "l4-storm",
+      "name": "Storm Sea",
+      "order": 4,
+      "description": "Gale-force wind and towering waves. Survive the storm and send the galleon to the bottom.",
+      "env": {
+        "time": "storm",
+        "waveHeight": 2.6,
+        "fog": 0.004
+      },
+      "wind": {
+        "dir": 2.4,
+        "speed": 16
+      },
+      "bounds": 450,
+      "player": {
+        "x": 0,
+        "z": -220,
+        "heading": 0,
+        "kind": "brig"
+      },
+      "islands": [
+        {
+          "id": "i1",
+          "x": -150,
+          "z": 0,
+          "r": 26,
+          "h": 16,
+          "seed": 41,
+          "palms": 2
+        },
+        {
+          "id": "i2",
+          "x": 135,
+          "z": -20,
+          "r": 30,
+          "h": 18,
+          "seed": 42,
+          "palms": 3
+        },
+        {
+          "id": "i3",
+          "x": -60,
+          "z": 185,
+          "r": 18,
+          "h": 12,
+          "seed": 43,
+          "palms": 0
+        },
+        {
+          "id": "i4",
+          "x": 165,
+          "z": 205,
+          "r": 22,
+          "h": 13,
+          "seed": 44,
+          "palms": 1
+        },
+        {
+          "id": "i5",
+          "x": 0,
+          "z": 40,
+          "r": 15,
+          "h": 9,
+          "seed": 45,
+          "palms": 0
+        },
+        {
+          "id": "i6",
+          "x": -230,
+          "z": -210,
+          "r": 20,
+          "h": 10,
+          "seed": 46,
+          "palms": 2
+        },
+        {
+          "id": "i7",
+          "x": 260,
+          "z": -230,
+          "r": 14,
+          "h": 8,
+          "seed": 47,
+          "palms": 0
+        }
+      ],
+      "enemies": [
+        {
+          "id": "g1",
+          "kind": "galleon",
+          "name": "Iron Galleon",
+          "x": 0,
+          "z": 150,
+          "heading": 3.14,
+          "ai": "patrol",
+          "path": [
+            [
+              0,
+              150
+            ],
+            [
+              -140,
+              110
+            ],
+            [
+              -120,
+              -110
+            ],
+            [
+              80,
+              -120
+            ],
+            [
+              110,
+              110
+            ]
+          ]
+        },
+        {
+          "id": "s1",
+          "kind": "sloop",
+          "x": -200,
+          "z": 120,
+          "heading": 2,
+          "ai": "hunt"
+        },
+        {
+          "id": "s2",
+          "kind": "sloop",
+          "x": 220,
+          "z": 80,
+          "heading": 4,
+          "ai": "patrol",
+          "path": [
+            [
+              220,
+              80
+            ],
+            [
+              240,
+              -120
+            ],
+            [
+              60,
+              -60
+            ]
+          ]
+        }
+      ],
+      "forts": [],
+      "pickups": [
+        {
+          "id": "r1",
+          "type": "repair",
+          "x": -80,
+          "z": -120,
+          "value": 80
+        },
+        {
+          "id": "r2",
+          "type": "repair",
+          "x": 90,
+          "z": 80,
+          "value": 80
+        },
+        {
+          "id": "w1",
+          "type": "powder",
+          "x": 60,
+          "z": -150,
+          "value": 15
+        },
+        {
+          "id": "g1c",
+          "type": "gold",
+          "x": -100,
+          "z": 80,
+          "value": 50
+        },
+        {
+          "id": "g2c",
+          "type": "gold",
+          "x": 200,
+          "z": -140,
+          "value": 50
+        }
+      ],
+      "goal": {
+        "type": "survive",
+        "time": 60,
+        "gold": 0,
+        "target": "g1"
+      }
+    },
+    {
+      "id": "l5-pirate-king",
+      "name": "The Pirate King",
+      "order": 5,
+      "description": "Moonlight and fog. The Pirate King's flagship hunts you with two sloops. Sink it to claim the crown.",
+      "env": {
+        "time": "night",
+        "waveHeight": 1.2,
+        "fog": 0.006
+      },
+      "wind": {
+        "dir": 0,
+        "speed": 9
+      },
+      "bounds": 470,
+      "player": {
+        "x": 0,
+        "z": -240,
+        "heading": 0,
+        "kind": "brig"
+      },
+      "islands": [
+        {
+          "id": "skull",
+          "x": -165,
+          "z": 60,
+          "r": 42,
+          "h": 32,
+          "seed": 51,
+          "palms": 6
+        },
+        {
+          "id": "i2",
+          "x": 155,
+          "z": 40,
+          "r": 36,
+          "h": 18,
+          "seed": 52,
+          "palms": 10
+        },
+        {
+          "id": "i3",
+          "x": 0,
+          "z": -40,
+          "r": 20,
+          "h": 9,
+          "seed": 53,
+          "palms": 5
+        },
+        {
+          "id": "i4",
+          "x": -60,
+          "z": 270,
+          "r": 18,
+          "h": 9,
+          "seed": 54,
+          "palms": 4
+        },
+        {
+          "id": "i5",
+          "x": 230,
+          "z": 260,
+          "r": 25,
+          "h": 12,
+          "seed": 55,
+          "palms": 7
+        },
+        {
+          "id": "i6",
+          "x": -260,
+          "z": -160,
+          "r": 22,
+          "h": 11,
+          "seed": 56,
+          "palms": 6
+        },
+        {
+          "id": "i7",
+          "x": 120,
+          "z": -200,
+          "r": 14,
+          "h": 6,
+          "seed": 57,
+          "palms": 3
+        }
+      ],
+      "enemies": [
+        {
+          "id": "boss",
+          "kind": "flagship",
+          "name": "Pirate King",
+          "x": 0,
+          "z": 210,
+          "heading": 3.14,
+          "ai": "patrol",
+          "path": [
+            [
+              0,
+              210
+            ],
+            [
+              -90,
+              140
+            ],
+            [
+              0,
+              80
+            ],
+            [
+              90,
+              140
+            ]
+          ]
+        },
+        {
+          "id": "s1",
+          "kind": "sloop",
+          "x": -70,
+          "z": 200,
+          "heading": 3.14,
+          "ai": "patrol",
+          "path": [
+            [
+              -70,
+              200
+            ],
+            [
+              -110,
+              120
+            ],
+            [
+              -40,
+              60
+            ]
+          ]
+        },
+        {
+          "id": "s2",
+          "kind": "sloop",
+          "x": 70,
+          "z": 200,
+          "heading": 3.14,
+          "ai": "patrol",
+          "path": [
+            [
+              70,
+              200
+            ],
+            [
+              110,
+              120
+            ],
+            [
+              40,
+              60
+            ]
+          ]
+        }
+      ],
+      "forts": [],
+      "pickups": [
+        {
+          "id": "r1",
+          "type": "repair",
+          "x": -120,
+          "z": -120,
+          "value": 90
+        },
+        {
+          "id": "r2",
+          "type": "repair",
+          "x": 110,
+          "z": -90,
+          "value": 90
+        },
+        {
+          "id": "r3",
+          "type": "repair",
+          "x": 0,
+          "z": 140,
+          "value": 90
+        },
+        {
+          "id": "w1",
+          "type": "powder",
+          "x": -40,
+          "z": -150,
+          "value": 15
+        },
+        {
+          "id": "w2",
+          "type": "powder",
+          "x": 60,
+          "z": 30,
+          "value": 15
+        },
+        {
+          "id": "g1",
+          "type": "gold",
+          "x": -200,
+          "z": 200,
+          "value": 80
+        }
+      ],
+      "goal": {
+        "type": "boss",
+        "time": 0,
+        "gold": 0,
+        "target": "boss"
+      }
+    }
+  ]
+}
