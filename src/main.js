@@ -7,6 +7,8 @@ import './styles.css';
 import { startLiveUpdate } from './live-update.js';
 
 const PK = globalThis.PirateKing;
+// Converted character models ship inside the site under dist/assets/idlefarm (relative, so GitHub project pages work).
+const ASSET_ROOT = 'assets/idlefarm/';
 const LEVELS = levelsFile.levels;
 const UP = PK.config.UPGRADES;
 const stage = document.getElementById('stage'), ui = document.getElementById('ui');
@@ -47,7 +49,7 @@ startLiveUpdate(() => screen);
 function showTitle() {
   if (!runtime || runtime.__attract !== true) {
     stopRuntime();
-    try { runtime = PK.boot(stage, { levels: [LEVELS[0]], mode: 'attract', hud: false, quality: save.settings.quality, sound: false, seed: 4, autoQuality: !save.settings.qualityLocked, onEvent: (e) => { if (e.type === 'quality') onAutoQuality(e); } }); runtime.__attract = true; } catch (e) { console.error(e); }
+    try { runtime = PK.boot(stage, { assetRoot: ASSET_ROOT, levels: [LEVELS[0]], mode: 'attract', hud: false, quality: save.settings.quality, sound: false, seed: 4, autoQuality: !save.settings.qualityLocked, onEvent: (e) => { if (e.type === 'quality') onAutoQuality(e); } }); runtime.__attract = true; } catch (e) { console.error(e); }
   }
   const el = h(`<section class="screen title">
     <div class="title-vignette"></div>
@@ -201,6 +203,7 @@ function startLevel(i) {
   const el = h('<section class="screen game"></section>');
   setScreen('game', el);
   runtime = PK.boot(stage, {
+    assetRoot: ASSET_ROOT,
     levels: LEVELS, startLevel: i, mode: 'play', quality: save.settings.quality, sound: save.settings.sound,
     upgrades: { ...save.upgrades }, menuAction: 'Chart', seed: 1 + i, autoQuality: !save.settings.qualityLocked,
     actions: (r) => r.won

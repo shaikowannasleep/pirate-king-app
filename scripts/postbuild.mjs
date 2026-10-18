@@ -13,7 +13,7 @@ const external = [...html.matchAll(/<(script|link)[^>]+(src|href)=["'](?!data:)(
 if (external.length) { console.error('External references found:', external); process.exit(1); }
 fs.writeFileSync(dst, html); fs.rmSync(src);
 const versionFile = path.join(dist, 'version.txt'), version = fs.existsSync(versionFile) ? fs.readFileSync(versionFile, 'utf8').trim() : '';
-for (const f of fs.readdirSync(dist)) if (f !== 'pirate-king.html') fs.rmSync(path.join(dist, f), { recursive: true, force: true });
+for (const f of fs.readdirSync(dist)) if (f !== 'pirate-king.html' && f !== 'assets') fs.rmSync(path.join(dist, f), { recursive: true, force: true });
 // GitHub Pages site: index.html (same page) + version.json for live update
 if (process.argv.includes('--site')) { fs.copyFileSync(dst, path.join(dist, 'index.html')); fs.writeFileSync(path.join(dist, 'version.json'), JSON.stringify({ version, builtAt: new Date().toISOString() }) + '\n'); fs.writeFileSync(path.join(dist, '.nojekyll'), ''); }
 console.log(`version ${version}; dist/pirate-king.html ${(Buffer.byteLength(html) / 1024).toFixed(0)} KB, self-contained`);

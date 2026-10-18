@@ -12,7 +12,7 @@ process.env.APP_VERSION = version;
 // One self-contained HTML (dist/index.html -> renamed to dist/pirate-king.html by scripts/postbuild.mjs).
 export default defineConfig({
   base: './',
-  publicDir: false,
+  publicDir: 'public', // character models and textures (public/assets/idlefarm), copied by npm run update
   define: { __APP_VERSION__: JSON.stringify(version) },
   plugins: [viteSingleFile({ removeViteModuleLoader: true }), { name: 'version-file', closeBundle() { fs.writeFileSync('dist/version.txt', version); } }],
   build: { target: 'es2020', assetsInlineLimit: 100000000, cssCodeSplit: false, modulePreload: false, chunkSizeWarningLimit: 4000, reportCompressedSize: false },
